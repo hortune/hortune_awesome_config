@@ -15,7 +15,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow"
-theme.wallpaper                                 = theme.dir .. "/wall.png"
+theme.wallpaper                                 = theme.dir .. "/wall1.png"
 theme.font                                      = "xos4 Terminus 9"
 theme.fg_normal                                 = "#FEFEFE"
 theme.fg_focus                                  = "#32D6FF"
@@ -35,7 +35,7 @@ theme.titlebar_bg_normal                        = "#3F3F3F"
 theme.titlebar_bg_focus                         = theme.bg_focus
 theme.titlebar_bg_normal                        = theme.bg_normal
 theme.titlebar_fg_focus                         = theme.fg_focus
-theme.menu_height                               = 16
+theme.menu_height                               = 32
 theme.menu_width                                = 140
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
 theme.awesome_icon                              = theme.dir .. "/icons/awesome.png"
@@ -291,7 +291,7 @@ function theme.powerline_rl(cr, width, height)
 end
 
 local function pl(widget, bgcolor, padding)
-    return wibox.container.background(wibox.container.margin(widget, 16, 16), bgcolor, theme.powerline_rl)
+    return wibox.container.background(wibox.container.margin(widget, 16, 16), bgcolor, theme.powerline_rl) -- change here
 end
 
 function theme.at_screen_connect(s)
@@ -325,7 +325,7 @@ function theme.at_screen_connect(s)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = 16, bg = theme.bg_normal, fg = theme.fg_normal })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = 32, bg = theme.bg_normal, fg = theme.fg_normal }) -- change
 
     -- Add widgets to the wibox
     s.mywibox:setup {
