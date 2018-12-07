@@ -348,7 +348,8 @@ globalkeys = my_table.join(
               {description = "delete tag", group = "tag"}),
 
     -- Standard program
-    awful.key({ "Control" }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
+    -- awful.key({ "Control" }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ "Control" }, "F12", function () awful.spawn.with_shell("i3lock-fancy -pf Comic-Sans-MS -t 'Contact: Hortune Chen' -- scrot -z") end),
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
@@ -744,4 +745,5 @@ client.connect_signal("focus", border_adjust)
 client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal c.opacity=1 end)
 -- }}}
-awful.spawn.with_shell("xscreensaver -no-splash")
+--awful.spawn.with_shell("xscreensaver -no-splash")
+--awful.spawn.with_shell("i3lock-fancy -pf Comic-Sans-MS -t 'Contact: Hortune Chen' -- scrot -z")
